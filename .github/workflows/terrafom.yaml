@@ -23,7 +23,7 @@ jobs:
   terraform:
     name: 'Terraform Apply code changes'
     runs-on: ubuntu-latest
-    default:
+    defaults:
       run:
         shell: bash
         working-directory: ./iac
@@ -56,4 +56,3 @@ jobs:
       - name: Terraform plan status
         if: steps.plan.outcome == 'failure'
         run: exit 1
-        
